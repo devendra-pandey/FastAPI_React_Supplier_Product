@@ -32,7 +32,7 @@ conf = ConnectionConfig(
     MAIL_PORT = 587,
     MAIL_SERVER = "smtp.gmail.com",
     # MAIL_STARTTLS = True,
-    MAIL_TLS = True
+    MAIL_TLS = True,
     MAIL_SSL = False,
     USE_CREDENTIALS = True,
     VALIDATE_CERTS = True
@@ -87,7 +87,7 @@ async def delete_supplier(supplier_id:int):
 
 
 
-@app.post("email/{product_id}"):
+@app.post("email/{product_id}")
 async def send_email(product_id:int, content:EmailContent):
 
     html = f"""<p>Hi this test mail, thanks for using Fastapi-mail</p> """
